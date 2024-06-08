@@ -11,8 +11,11 @@ export const defaultPizzaImage =
 
 const ProductListItem = ({ product }: ProductListItemProps) => {
   return (
-    <Link href={`/menu/${product.id}`} asChild>
-      <Pressable className="bg-white p-2 rounded-xl flex-1 max-w-[50%]">
+    <Link key={product.id} href={`/menu/${product.id}`} asChild>
+      <Pressable
+        key={product.id}
+        className="bg-white p-2 rounded-xl flex-1 max-w-[50%]"
+      >
         <Image
           source={{ uri: product.image || defaultPizzaImage }}
           className="w-full aspect-[1]"
